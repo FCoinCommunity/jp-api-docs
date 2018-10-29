@@ -122,7 +122,7 @@ This API is used to query the order list.
 
 ### HTTP Request
 
-`GET https://api.fcoin.com/v2/orders`
+`GET https://api.fcoinjp.com/v2/orders`
 
 ### Query parameters
 
@@ -180,7 +180,7 @@ This API is used to return the specified order details。
 
 ### HTTP Request
 
-`GET https://api.fcoin.com/v2/orders/{order_id}`
+`GET https://api.fcoinjp.com/v2/orders/{order_id}`
 
 ### URL Parameters
 
@@ -223,7 +223,7 @@ This API is used to cancel the specified order. The order canceling process is a
 
 ### HTTP Request
 
-`POST https://api.fcoin.com/v2/orders/{order_id}/submit-cancel`
+`POST https://api.fcoinjp.com/v2/orders/{order_id}/submit-cancel`
 
 ### URL Parameters
 
@@ -274,7 +274,7 @@ This API is used to get the trading record of the specified order
 
 ### HTTP Request
 
-`GET https://api.fcoin.com/v2/orders/{order_id}/match-results`
+`GET https://api.fcoinjp.com/v2/orders/{order_id}/match-results`
 
 ### URL Parameters
 
