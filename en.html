@@ -309,7 +309,7 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>By understanding the following information, you can easily use the API provided by FCoin to access the FCoin trading platform.</p>
+<p>By understanding the following information, you can easily use the API provided by FCoinJP to access the FCoinJP trading platform.</p>
 <h1 id='certification'>Certification</h1>
 <blockquote>
 <p>Execute the following code for user identification：</p>
@@ -339,13 +339,13 @@ Please note that twice `Base64` encoding is required!
 <h3 id='http_method'>HTTP_METHOD</h3>
 <p><code>GET</code>, <code>POST</code>, <code>DELETE</code>, <code>PUT</code> requires capitalization</p>
 <h3 id='http_request_uri'>HTTP_REQUEST_URI</h3>
-<p><code>https://api.fcoin.com/v2/</code> is the prefix for v2 API request</p>
+<p><code>https://api.fcoinjp.com/v2/</code> is the prefix for v2 API request</p>
 
-<p>Add the resource path you really want to access, such as <code>orders?param1=value1</code>, and finally <code>https://api.fcoin.com/v2/orders?param1=value1</code></p>
+<p>Add the resource path you really want to access, such as <code>orders?param1=value1</code>, and finally <code>https://api.fcoinjp.com/v2/orders?param1=value1</code></p>
 
 <p>The parameters in the requested URI need to be sorted by alphabetically.</p>
 
-<p>That is, if the requested URI is <code>https://api.fcoin.com/v2/orders?c=value1&amp;b=value2&amp;a=value3</code>, then the request parameters should be sorted alphabetically before signing, and the final signed URI is <code>https://api.fcoin.com/v2/orders?a=value3&amp;b=value2&amp;c=value1</code>. Please note that the order of the three parameters in the original request URI is <code>c, b, a</code>, and then <code>a, b, c</code> after ordering.</p>
+<p>That is, if the requested URI is <code>https://api.fcoinjp.com/v2/orders?c=value1&amp;b=value2&amp;a=value3</code>, then the request parameters should be sorted alphabetically before signing, and the final signed URI is <code>https://api.fcoin.com/v2/orders?a=value3&amp;b=value2&amp;c=value1</code>. Please note that the order of the three parameters in the original request URI is <code>c, b, a</code>, and then <code>a, b, c</code> after ordering.</p>
 <h3 id='timestamp'>TIMESTAMP</h3>
 <p>When accessing the API, the time difference between the UNIX EPOCH timestamp and the server should be no more than 30 seconds.</p>
 <h3 id='post_body'>POST_BODY</h3>
@@ -379,7 +379,7 @@ username=username
 <blockquote>
 <p>For the following requests：</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api.fcoin.com/v2/orders
+<pre class="highlight plaintext"><code>POST https://api.fcoinjp.com/v2/orders
 
 {
   "type": "limit",
@@ -394,19 +394,19 @@ timestamp: 1523069544359
 <blockquote>
 <p>The preparated data before signing is as follows：</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POSThttps://api.fcoin.com/v2/orders1523069544359amount=100.0&amp;price=100.0&amp;side=buy&amp;symbol=btcusdt&amp;type=limit
+<pre class="highlight plaintext"><code>POSThttps://api.fcoinjp.com/v2/orders1523069544359amount=100.0&amp;price=100.0&amp;side=buy&amp;symbol=btcusdt&amp;type=limit
 </code></pre>
 <blockquote>
 <p>Perform Base64 encoding to obtain：</p>
 </blockquote>
-<pre class="highlight plaintext"><code>UE9TVGh0dHBzOi8vYXBpLmZjb2luLmNvbS92Mi9vcmRlcnMxNTIzMDY5NTQ0MzU5YW1vdW50PTEwMC4wJnByaWNlPTEwMC4wJnNpZGU9YnV5JnN5bWJvbD1idGN1c2R0JnR5cGU9bGltaXQ=
+<pre class="highlight plaintext"><code>UE9TVGh0dHBzOi8vYXBpLmZjb2luanAuY29tL3YyL29yZGVyczE1MjMwNjk1NDQzNTlhbW91bnQ9MTAwLjAmcHJpY2U9MTAwLjAmc2lkZT1idXkmc3ltYm9sPWJ0Y3VzZHQmdHlwZT1saW1pdA==
 </code></pre>
 <blockquote>
 <p>Copy the key obtained when applying for the API Key (API SECRET). The following signature result is taken <code>3600d0a74aa3410fb3b1996cca2419c8</code> as an example，</p>
 
 <p>The obtained result is <code>HMAC-SHA1</code> signed with the secret key, and the binary result is <code>Base64</code> encoded, to obtain：</p>
 </blockquote>
-<pre class="highlight plaintext"><code>DeP6oftldIrys06uq3B7Lkh3a0U=
+<pre class="highlight plaintext"><code>GlHEbHNg2rldDuZ2eCHX8EX8XP0=
 </code></pre>
 <blockquote>
 <p>That is, the final signature is generated for verification to the API server</p>
@@ -438,7 +438,7 @@ timestamp: 1523069544359
 </span></code></pre>
 <p>The API is used to obtain the server time。</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET https://api.fcoin.com/v2/public/server-time</code></p>
+<p><code>GET https://api.fcoinjp.com/v2/public/server-time</code></p>
 <h2 id='query-available-currencies'>Query available currencies</h2><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">fcoin</span>
 
 <span class="n">api</span> <span class="o">=</span> <span class="n">fcoin</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'key'</span><span class="p">,</span> <span class="s">'secret'</span><span class="p">,</span> <span class="n">timestamp</span><span class="p">)</span>
@@ -461,7 +461,7 @@ timestamp: 1523069544359
 </span></code></pre>
 <p>This API is used to obtain the available currencies。</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET https://api.fcoin.com/v2/public/currencies</code></p>
+<p><code>GET https://api.fcoinjp.com/v2/public/currencies</code></p>
 <h2 id='query-available-trading-pairs'>Query available trading pairs</h2><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">fcoin</span>
 
 <span class="n">api</span> <span class="o">=</span> <span class="n">fcoin</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'key'</span><span class="p">,</span> <span class="s">'secret'</span><span class="p">,</span> <span class="n">timestamp</span><span class="p">)</span>
@@ -496,15 +496,15 @@ timestamp: 1523069544359
 </span></code></pre>
 <p>This API is used to get available trading pairs。</p>
 <h3 id='http-request-3'>HTTP Request</h3>
-<p><code>GET https://api.fcoin.com/v2/public/symbols</code></p>
+<p><code>GET https://api.fcoinjp.com/v2/public/symbols</code></p>
 <h1 id='market'>Market</h1><h2 id='market-overview'>Market overview</h2>
 <p>The market is a fully public API, which currently provides both HTTP and WebSocket APIs.
 In order to ensure more timely access to the market, it is recommended to use WebSocket to access. 
 For the real-time performance of the market as much as possible, the current public part can only obtain the most recent market information.  If there is a need to obtain the full amount or historical market information, please consult <code>support@fcoin.com</code></p>
 
-<p>The URL base for all HTTP requests is: <code>https://api.fcoin.com/v2/market</code></p>
+<p>The URL base for all HTTP requests is: <code>https://api.fcoinjp.com/v2/market</code></p>
 
-<p>The requested URL for all WebSocket is: <code>wss://api.fcoin.com/v2/ws</code></p>
+<p>The requested URL for all WebSocket is: <code>wss://api.fcoinjp.com/v2/ws</code></p>
 
 <p>Terminology will be consistent below:</p>
 
@@ -584,7 +584,7 @@ For the real-time performance of the market as much as possible, the current pub
   </span><span class="s2">"Priced currency volume within 24 hours, such as the amount of usdt in btcusdt"</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre><h3 id='http-requests'>HTTP requests</h3>
-<p><code>GET https://api.fcoin.com/v2/market/ticker/$symbol</code></p>
+<p><code>GET https://api.fcoinjp.com/v2/market/ticker/$symbol</code></p>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">fcoin</span>
 
 <span class="n">api</span> <span class="o">=</span> <span class="n">fcoin</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'key'</span><span class="p">,</span> <span class="s">'secret'</span><span class="p">,</span> <span class="n">timestamp</span><span class="p">)</span>
@@ -648,7 +648,7 @@ For the real-time performance of the market as much as possible, the current pub
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h2 id='get-the-latest-trading-details'>Get the latest trading details</h2><h3 id='http-request'>HTTP Request</h3>
-<p><code>GET https://api.fcoin.com/v2/market/depth/$level/$symbol</code></p>
+<p><code>GET https://api.fcoinjp.com/v2/market/depth/$level/$symbol</code></p>
 
 <p>types of <code>$level</code> included:</p>
 
@@ -714,7 +714,7 @@ Even if the transaction is a record, there is no guarantee that the id will alwa
 
 <p>PS: in the historical market, the trading id remains constant. {transaction id} is only used as a market update notification and should not be used depending on the archive.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET https://api.fcoin.com/v2/market/trades/$symbol</code></p>
+<p><code>GET https://api.fcoinjp.com/v2/market/trades/$symbol</code></p>
 <h3 id='query-parameters-http-query'>Query parameters(HTTP Query)</h3>
 <table><thead>
 <tr>
@@ -802,7 +802,7 @@ args: [topic, limit]</p>
   </span><span class="s2">"price"</span><span class="p">:</span><span class="mf">4.000000000</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h2 id='get-candle-information'>Get Candle information</h2><h3 id='http-request-3'>HTTP Request</h3>
-<p><code>GET https://api.fcoin.com/v2/market/candles/$resolution/$symbol</code></p>
+<p><code>GET https://api.fcoinjp.com/v2/market/candles/$resolution/$symbol</code></p>
 <h3 id='query-parameters-http-query-2'>Query parameters(HTTP Query)</h3>
 <table><thead>
 <tr>
@@ -934,7 +934,7 @@ args: [topic, limit]</p>
 </span></code></pre>
 <p>This API is used to query a user&#39;s list of assets.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET https://api.fcoin.com/v2/accounts/balance</code></p>
+<p><code>GET https://api.fcoinjp.com/v2/accounts/balance</code></p>
 <h1 id='orders'>Orders</h1><h2 id='description-of-the-order-model'>Description of the order model</h2>
 <p>The order model consists of the following properties：</p>
 
@@ -1130,7 +1130,7 @@ args: [topic, limit]</p>
 </span></code></pre>
 <p>This API is used to query the order list.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET https://api.fcoin.com/v2/orders</code></p>
+<p><code>GET https://api.fcoinjp.com/v2/orders</code></p>
 <h3 id='query-parameters'>Query parameters</h3>
 <table><thead>
 <tr>
@@ -1197,7 +1197,7 @@ args: [topic, limit]</p>
 </span></code></pre>
 <p>This API is used to return the specified order details。</p>
 <h3 id='http-request-3'>HTTP Request</h3>
-<p><code>GET https://api.fcoin.com/v2/orders/{order_id}</code></p>
+<p><code>GET https://api.fcoinjp.com/v2/orders/{order_id}</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -1230,7 +1230,7 @@ args: [topic, limit]</p>
 </span></code></pre>
 <p>This API is used to cancel the specified order. The order canceling process is asynchronous. That is, the successful call of this API represents that the order has entered the revocation request. Further processing of matching is required before the confirmation of order canceling.</p>
 <h3 id='http-request-4'>HTTP Request</h3>
-<p><code>POST https://api.fcoin.com/v2/orders/{order_id}/submit-cancel</code></p>
+<p><code>POST https://api.fcoinjp.com/v2/orders/{order_id}/submit-cancel</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -1271,7 +1271,7 @@ args: [topic, limit]</p>
 </span></code></pre>
 <p>This API is used to get the trading record of the specified order</p>
 <h3 id='http-request-5'>HTTP Request</h3>
-<p><code>GET https://api.fcoin.com/v2/orders/{order_id}/match-results</code></p>
+<p><code>GET https://api.fcoinjp.com/v2/orders/{order_id}/match-results</code></p>
 <h3 id='url-parameters-3'>URL Parameters</h3>
 <table><thead>
 <tr>
