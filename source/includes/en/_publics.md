@@ -29,7 +29,7 @@ The API is used to obtain the server time。
 
 ### HTTP Request
 
-`GET https://api.fcoin.com/v2/public/server-time`
+`GET https://api.fcoinjp.com/v2/public/server-time`
 
 
 
@@ -67,7 +67,7 @@ This API is used to obtain the available currencies。
 
 ### HTTP Request
 
-`GET https://api.fcoin.com/v2/public/currencies`
+`GET https://api.fcoinjp.com/v2/public/currencies`
 
 
 
@@ -117,4 +117,4 @@ This API is used to get available trading pairs。
 
 ### HTTP Request
 
-`GET https://api.fcoin.com/v2/public/symbols`
+`GET https://api.fcoinjp.com/v2/public/symbols`
