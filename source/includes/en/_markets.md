@@ -6,9 +6,9 @@ The market is a fully public API, which currently provides both HTTP and WebSock
 In order to ensure more timely access to the market, it is recommended to use WebSocket to access. 
 For the real-time performance of the market as much as possible, the current public part can only obtain the most recent market information.  If there is a need to obtain the full amount or historical market information, please consult `support@fcoin.com`
 
-The URL base for all HTTP requests is: `https://api.fcoin.com/v2/market`
+The URL base for all HTTP requests is: `https://api.fcoinjp.com/v2/market`
 
-The requested URL for all WebSocket is: `wss://api.fcoin.com/v2/ws`
+The requested URL for all WebSocket is: `wss://api.fcoinjp.com/v2/ws`
 
 Terminology will be consistent below:
 
@@ -101,7 +101,7 @@ To make the ticker Information Group small and fast enough, we enforced the list
 
 ### HTTP requests
 
-`GET https://api.fcoin.com/v2/market/ticker/$symbol`
+`GET https://api.fcoinjp.com/v2/market/ticker/$symbol`
 
 ```python
 import fcoin
@@ -184,7 +184,7 @@ fcoin_ws.sub(topics)
 
 ### HTTP Request
 
-`GET https://api.fcoin.com/v2/market/depth/$level/$symbol`
+`GET https://api.fcoinjp.com/v2/market/depth/$level/$symbol`
 
 types of `$level` included:
 
@@ -252,7 +252,7 @@ PS: in the historical market, the trading id remains constant. {transaction id} 
 
 ### HTTP Request
 
-`GET https://api.fcoin.com/v2/market/trades/$symbol`
+`GET https://api.fcoinjp.com/v2/market/trades/$symbol`
 
 ### Query parameters(HTTP Query)
 
@@ -346,7 +346,7 @@ fcoin_ws.sub(topics)
 
 ### HTTP Request
 
-`GET https://api.fcoin.com/v2/market/candles/$resolution/$symbol`
+`GET https://api.fcoinjp.com/v2/market/candles/$resolution/$symbol`
 
 ### Query parameters(HTTP Query)
 
