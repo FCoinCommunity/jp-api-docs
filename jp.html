@@ -339,13 +339,13 @@
 <h3 id='http_method'>HTTP_METHOD</h3>
 <p><code>GET</code>, <code>POST</code>, <code>DELETE</code>, <code>PUT</code> は必ず大文字にしてください</p>
 <h3 id='http_request_uri'>HTTP_REQUEST_URI</h3>
-<p><code>https://api.fcoin.com/v2/</code> v2 APIのリクエストの接頭辞</p>
+<p><code>https://api.fcoinjp.com/v2/</code> v2 APIのリクエストの接頭辞</p>
 
-<p>その後に、アクセスしたいリソースパスを記入してください。例： <code>orders?param1=value1</code>の場合は，最終形は <code>https://api.fcoin.com/v2/orders?param1=value1</code>となります</p>
+<p>その後に、アクセスしたいリソースパスを記入してください。例： <code>orders?param1=value1</code>の場合は，最終形は <code>https://api.fcoinjp.com/v2/orders?param1=value1</code>となります</p>
 
 <p>リクエストされたURIのパラメータについては、アルファベット順に並べ替える必要があります！</p>
 
-<p>すなわち、リクエストされたURIは<code>https://api.fcoin.com/v2/orders?c=value1&amp;b=value2&amp;a=value3</code>の場合，デジタル署名する際に、リクエスト・パラメータをアルファベット順にソートさせ、デジタル署名の最終URIは <code>https://api.fcoin.com/v2/orders?a=value3&amp;b=value2&amp;c=value1</code>となります。 元のリクエスト中には、URI中の三つのパラメータの順番は <code>c</code>, <code>b</code>, <code>a</code>だが，ソート後、順番は <code>a</code>, <code>b</code>, <code>c</code>になっております。ご注意ください。</p>
+<p>すなわち、リクエストされたURIは<code>https://api.fcoinjp.com/v2/orders?c=value1&amp;b=value2&amp;a=value3</code>の場合，デジタル署名する際に、リクエスト・パラメータをアルファベット順にソートさせ、デジタル署名の最終URIは <code>https://api.fcoinjp.com/v2/orders?a=value3&amp;b=value2&amp;c=value1</code>となります。 元のリクエスト中には、URI中の三つのパラメータの順番は <code>c</code>, <code>b</code>, <code>a</code>だが，ソート後、順番は <code>a</code>, <code>b</code>, <code>c</code>になっております。ご注意ください。</p>
 <h3 id='timestamp'>TIMESTAMP</h3>
 <p>APIを利用してアクセスする時のUNIX EPOCHタイムスタンプは、サーバーとの時間差は30秒以内でなければなりません。</p>
 <h3 id='post_body'>POST_BODY</h3>
@@ -394,19 +394,19 @@ timestamp: 1523069544359
 <blockquote>
 <p>デジタル署名を行うため、あらかじめ下記データをご用意してください：</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POSThttps://api.fcoin.com/v2/orders1523069544359amount=100.0&amp;price=100.0&amp;side=buy&amp;symbol=btcusdt&amp;type=limit
+<pre class="highlight plaintext"><code>POSThttps://api.fcoinjp.com/v2/orders1523069544359amount=100.0&amp;price=100.0&amp;side=buy&amp;symbol=btcusdt&amp;type=limit
 </code></pre>
 <blockquote>
 <p>Base64エンコーディングし、下記データになります：</p>
 </blockquote>
-<pre class="highlight plaintext"><code>UE9TVGh0dHBzOi8vYXBpLmZjb2luLmNvbS92Mi9vcmRlcnMxNTIzMDY5NTQ0MzU5YW1vdW50PTEwMC4wJnByaWNlPTEwMC4wJnNpZGU9YnV5JnN5bWJvbD1idGN1c2R0JnR5cGU9bGltaXQ=
+<pre class="highlight plaintext"><code>UE9TVGh0dHBzOi8vYXBpLmZjb2luanAuY29tL3YyL29yZGVyczE1MjMwNjk1NDQzNTlhbW91bnQ9MTAwLjAmcHJpY2U9MTAwLjAmc2lkZT1idXkmc3ltYm9sPWJ0Y3VzZHQmdHlwZT1saW1pdA==
 </code></pre>
 <blockquote>
 <p>API キーを申請した際に取得したキー（API シークレット）をコピーし，以下のデジタル署名結果は、例として <code>3600d0a74aa3410fb3b1996cca2419c8</code> を使用しています，</p>
 
 <p>結果に対して、秘密鍵を使用して、 <code>HMAC-SHA1</code> デジタル署名し、バイナリ結果に対して<code>Base64</code> エンコーディング後、下記になります：</p>
 </blockquote>
-<pre class="highlight plaintext"><code>DeP6oftldIrys06uq3B7Lkh3a0U=
+<pre class="highlight plaintext"><code>GlHEbHNg2rldDuZ2eCHX8EX8XP0=
 </code></pre>
 <blockquote>
 <p>すなわち、APIサーバーへ検証するための最終的なデジタル署名が生成されます</p>
@@ -438,7 +438,7 @@ timestamp: 1523069544359
 </span></code></pre>
 <p>このAPIを使用して、サーバー時刻を取得できます。</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET https://api.fcoin.com/v2/public/server-time</code></p>
+<p><code>GET https://api.fcoinjp.com/v2/public/server-time</code></p>
 <h2 id='908c1cb803'>取扱い仮想通貨の照会</h2><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">fcoin</span>
 
 <span class="n">api</span> <span class="o">=</span> <span class="n">fcoin</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'key'</span><span class="p">,</span> <span class="s">'secret'</span><span class="p">,</span> <span class="n">timestamp</span><span class="p">)</span>
@@ -461,7 +461,7 @@ timestamp: 1523069544359
 </span></code></pre>
 <p>このAPIを使用して、取扱い仮想通貨を取得できます。</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET https://api.fcoin.com/v2/public/currencies</code></p>
+<p><code>GET https://api.fcoinjp.com/v2/public/currencies</code></p>
 <h2 id='be15bcbfb5'>取引通貨ペアの照会</h2><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">fcoin</span>
 
 <span class="n">api</span> <span class="o">=</span> <span class="n">fcoin</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'key'</span><span class="p">,</span> <span class="s">'secret'</span><span class="p">,</span> <span class="n">timestamp</span><span class="p">)</span>
@@ -496,13 +496,13 @@ timestamp: 1523069544359
 </span></code></pre>
 <p>このAPIを使用して、取引通貨ペアを取得できます。</p>
 <h3 id='http-request-3'>HTTP Request</h3>
-<p><code>GET https://api.fcoin.com/v2/public/symbols</code></p>
+<p><code>GET https://api.fcoinjp.com/v2/public/symbols</code></p>
 <h1 id='c06c016e90'>マーケット情報</h1><h2 id='0093b50f1a'>マーケット情報概述</h2>
 <p>マーケット情報は公開APIを通じて取得できます。現在、HTTPとWebSocketの2つのAPIを提供しています。 タイムリーにマーケット情報を取得するため、WebSocketを使用してアクセスすることをお勧めします。 マーケット情報のリアルタイムパフォーマンスを可能な限り高めるために、現在の公開している部分は最新のマーケットデータのみを取得することができます。もし全部の情報、または履歴情報を取得する必要がある場合は、<code>support@fcoin.com</code>までご連絡ください</p>
 
-<p>すべてのHTTP リクエストのURLベースは：<code>https://api.fcoin.com/v2/market</code>です</p>
+<p>すべてのHTTP リクエストのURLベースは：<code>https://api.fcoinjp.com/v2/market</code>です</p>
 
-<p>すべてのWebSocket リクエストのURLは: <code>wss://api.fcoin.com/v2/ws</code>です</p>
+<p>すべてのWebSocket リクエストのURLは: <code>wss://api.fcoinjp.com/v2/ws</code>です</p>
 
 <p>用語は以下のように統一されます:</p>
 
@@ -582,7 +582,7 @@ timestamp: 1523069544359
   </span><span class="s2">"24時間内評価通貨出来高。例えば、btcusdtのusdtのボリューム"</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre><h3 id='http'>HTTP リクエスト</h3>
-<p><code>GET https://api.fcoin.com/v2/market/ticker/$symbol</code></p>
+<p><code>GET https://api.fcoinjp.com/v2/market/ticker/$symbol</code></p>
 <pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">fcoin</span>
 
 <span class="n">api</span> <span class="o">=</span> <span class="n">fcoin</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'key'</span><span class="p">,</span> <span class="s">'secret'</span><span class="p">,</span> <span class="n">timestamp</span><span class="p">)</span>
@@ -646,7 +646,7 @@ timestamp: 1523069544359
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h2 id='044d1e4947'>詳細マーケット情報取得</h2><h3 id='http-request'>HTTP Request</h3>
-<p><code>GET https://api.fcoin.com/v2/market/depth/$level/$symbol</code></p>
+<p><code>GET https://api.fcoinjp.com/v2/market/depth/$level/$symbol</code></p>
 
 <p><code>$level</code> 下記種類を含みます:</p>
 
@@ -711,7 +711,7 @@ timestamp: 1523069544359
 
 <p>PS: 過去のマーケット情報では、取引IDが１つであることが保証できます。{transaction id} ここは”行情”の更新通知としてのみ使用され、アーカイブに使用しないでください.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET https://api.fcoin.com/v2/market/trades/$symbol</code></p>
+<p><code>GET https://api.fcoinjp.com/v2/market/trades/$symbol</code></p>
 <h3 id='http-query'>パラメータの照会(HTTP Query)</h3>
 <table><thead>
 <tr>
@@ -799,7 +799,7 @@ args: [topic, limit]</p>
   </span><span class="s2">"price"</span><span class="p">:</span><span class="mf">4.000000000</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h2 id='candle'>Candle情報の取得</h2><h3 id='http-request-3'>HTTP Request</h3>
-<p><code>GET https://api.fcoin.com/v2/market/candles/$resolution/$symbol</code></p>
+<p><code>GET https://api.fcoinjp.com/v2/market/candles/$resolution/$symbol</code></p>
 <h3 id='http-query-2'>パラメータの照会(HTTP Query)</h3>
 <table><thead>
 <tr>
@@ -931,7 +931,7 @@ args: [topic, limit]</p>
 </span></code></pre>
 <p>このAPIは、ユーザーの資産リストを照会するために使用されます。</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET https://api.fcoin.com/v2/accounts/balance</code></p>
+<p><code>GET https://api.fcoinjp.com/v2/accounts/balance</code></p>
 <h1 id='662dbb2d11'>注文</h1><h2 id='d3cb4d170f'>注文モデル説明</h2>
 <p>注文モデルは、以下の属性によって構成されます：</p>
 
@@ -1058,7 +1058,7 @@ args: [topic, limit]</p>
 </span></code></pre>
 <p>このAPIは新規注文を発注します。</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>POST https://api.fcoin.com/v2/orders</code></p>
+<p><code>POST https://api.fcoinjp.com/v2/orders</code></p>
 <h3 id='4c4f7e67fc'>リクエスト・パラメータ</h3>
 <table><thead>
 <tr>
@@ -1127,7 +1127,7 @@ args: [topic, limit]</p>
 </span></code></pre>
 <p>このAPIは注文リストの照会に使用されます。</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET https://api.fcoin.com/v2/orders</code></p>
+<p><code>GET https://api.fcoinjp.com/v2/orders</code></p>
 <h3 id='ec409876b3'>照会パラメータ</h3>
 <table><thead>
 <tr>
@@ -1194,7 +1194,7 @@ args: [topic, limit]</p>
 </span></code></pre>
 <p>このAPIは指定された注文の詳細を取得します。</p>
 <h3 id='http-request-3'>HTTP Request</h3>
-<p><code>GET https://api.fcoin.com/v2/orders/{order_id}</code></p>
+<p><code>GET https://api.fcoinjp.com/v2/orders/{order_id}</code></p>
 <h3 id='url'>URL パラメータ</h3>
 <table><thead>
 <tr>
@@ -1227,7 +1227,7 @@ args: [topic, limit]</p>
 </span></code></pre>
 <p>このAPIは指定された注文をキャンセルするために、使用されます。注文のキャンセル・プロセスは非同期です。つまり、このAPIの呼び出しが成功した場合は、注文はキャンセルリクエストのプロセスに入っていますが、注文の取り消しを確認するためにマッチング処理を待つ必要があります。</p>
 <h3 id='http-request-4'>HTTP Request</h3>
-<p><code>POST https://api.fcoin.com/v2/orders/{order_id}/submit-cancel</code></p>
+<p><code>POST https://api.fcoinjp.com/v2/orders/{order_id}/submit-cancel</code></p>
 <h3 id='url-2'>URL パラメータ</h3>
 <table><thead>
 <tr>
@@ -1268,7 +1268,7 @@ args: [topic, limit]</p>
 </span></code></pre>
 <p>このAPIは指定されている注文の取引記録の取得に使用されます</p>
 <h3 id='http-request-5'>HTTP Request</h3>
-<p><code>GET https://api.fcoin.com/v2/orders/{order_id}/match-results</code></p>
+<p><code>GET https://api.fcoinjp.com/v2/orders/{order_id}/match-results</code></p>
 <h3 id='url-3'>URL パラメータ</h3>
 <table><thead>
 <tr>
