@@ -46,13 +46,13 @@ Please note that twice `Base64` encoding is required!
 
 ### HTTP_REQUEST_URI
 
-`https://api.fcoin.com/v2/` is the prefix for v2 API request
+`https://api.fcoinjp.com/v2/` is the prefix for v2 API request
 
-Add the resource path you really want to access, such as `orders?param1=value1`, and finally `https://api.fcoin.com/v2/orders?param1=value1`
+Add the resource path you really want to access, such as `orders?param1=value1`, and finally `https://api.fcoinjp.com/v2/orders?param1=value1`
 
 The parameters in the requested URI need to be sorted by alphabetically.
 
-That is, if the requested URI is `https://api.fcoin.com/v2/orders?c=value1&b=value2&a=value3`, then the request parameters should be sorted alphabetically before signing, and the final signed URI is `https://api.fcoin.com/v2/orders?a=value3&b=value2&c=value1`. Please note that the order of the three parameters in the original request URI is `c, b, a`, and then `a, b, c` after ordering.
+That is, if the requested URI is `https://api.fcoinjp.com/v2/orders?c=value1&b=value2&a=value3`, then the request parameters should be sorted alphabetically before signing, and the final signed URI is `https://api.fcoin.com/v2/orders?a=value3&b=value2&c=value1`. Please note that the order of the three parameters in the original request URI is `c, b, a`, and then `a, b, c` after ordering.
 
 ### TIMESTAMP
 
@@ -95,7 +95,7 @@ password=password&username=username
 > For the following requests：
 
 ```
-POST https://api.fcoin.com/v2/orders
+POST https://api.fcoinjp.com/v2/orders
 
 {
   "type": "limit",
@@ -111,7 +111,7 @@ timestamp: 1523069544359
 > The preparated data before signing is as follows：
 
 ```
-POSThttps://api.fcoin.com/v2/orders1523069544359amount=100.0&price=100.0&side=buy&symbol=btcusdt&type=limit
+POSThttps://api.fcoinjp.com/v2/orders1523069544359amount=100.0&price=100.0&side=buy&symbol=btcusdt&type=limit
 ```
 
 > Perform Base64 encoding to obtain：
