@@ -14,9 +14,9 @@ const fcoin = require('fcoin');
 let api = fcoin.authorize('key', 'secret', timestamp);
 ```
 
-FCoinはAPI キーとAPIシークレットを使用して、認証を行います。 設定センターにて，開発者にご登録してください。ご登録いただいた後、API キーとAPI シークレット情報をご利用いただけます。
+FCoinJPはAPI キーとAPIシークレットを使用して、認証を行います。 設定センターにて，開発者にご登録してください。ご登録いただいた後、API キーとAPI シークレット情報をご利用いただけます。
 
-FCoinのAPI利用について，公開API以外に、API キー及び署名が必要となります。
+FCoinJPのAPI利用について，公開API以外に、API キー及び署名が必要となります。
 
 
 
