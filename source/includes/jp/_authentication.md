@@ -46,13 +46,13 @@ FCoinのAPI利用について，公開API以外に、API キー及び署名が�
 
 ### HTTP_REQUEST_URI
 
-`https://api.fcoin.com/v2/` v2 APIのリクエストの接頭辞
+`https://api.fcoinjp.com/v2/` v2 APIのリクエストの接頭辞
 
-その後に、アクセスしたいリソースパスを記入してください。例： `orders?param1=value1`の場合は，最終形は `https://api.fcoin.com/v2/orders?param1=value1`となります
+その後に、アクセスしたいリソースパスを記入してください。例： `orders?param1=value1`の場合は，最終形は `https://api.fcoinjp.com/v2/orders?param1=value1`となります
 
 リクエストされたURIのパラメータについては、アルファベット順に並べ替える必要があります！
 
-すなわち、リクエストされたURIは`https://api.fcoin.com/v2/orders?c=value1&b=value2&a=value3`の場合，デジタル署名する際に、リクエスト・パラメータをアルファベット順にソートさせ、デジタル署名の最終URIは `https://api.fcoin.com/v2/orders?a=value3&b=value2&c=value1`となります。 元のリクエスト中には、URI中の三つのパラメータの順番は `c`, `b`, `a`だが，ソート後、順番は `a`, `b`, `c`になっております。ご注意ください。
+すなわち、リクエストされたURIは`https://api.fcoinjp.com/v2/orders?c=value1&b=value2&a=value3`の場合，デジタル署名する際に、リクエスト・パラメータをアルファベット順にソートさせ、デジタル署名の最終URIは `https://api.fcoinjp.com/v2/orders?a=value3&b=value2&c=value1`となります。 元のリクエスト中には、URI中の三つのパラメータの順番は `c`, `b`, `a`だが，ソート後、順番は `a`, `b`, `c`になっております。ご注意ください。
 
 ### TIMESTAMP
 
@@ -111,13 +111,13 @@ timestamp: 1523069544359
 > デジタル署名を行うため、あらかじめ下記データをご用意してください：
 
 ```
-POSThttps://api.fcoin.com/v2/orders1523069544359amount=100.0&price=100.0&side=buy&symbol=btcusdt&type=limit
+POSThttps://api.fcoinjp.com/v2/orders1523069544359amount=100.0&price=100.0&side=buy&symbol=btcusdt&type=limit
 ```
 
 > Base64エンコーディングし、下記データになります：
 
 ```
-UE9TVGh0dHBzOi8vYXBpLmZjb2luLmNvbS92Mi9vcmRlcnMxNTIzMDY5NTQ0MzU5YW1vdW50PTEwMC4wJnByaWNlPTEwMC4wJnNpZGU9YnV5JnN5bWJvbD1idGN1c2R0JnR5cGU9bGltaXQ=
+UE9TVGh0dHBzOi8vYXBpLmZjb2luanAuY29tL3YyL29yZGVyczE1MjMwNjk1NDQzNTlhbW91bnQ9MTAwLjAmcHJpY2U9MTAwLjAmc2lkZT1idXkmc3ltYm9sPWJ0Y3VzZHQmdHlwZT1saW1pdA==
 ```
 
 > API キーを申請した際に取得したキー（API シークレット）をコピーし，以下のデジタル署名結果は、例として `3600d0a74aa3410fb3b1996cca2419c8` を使用しています，
@@ -125,7 +125,7 @@ UE9TVGh0dHBzOi8vYXBpLmZjb2luLmNvbS92Mi9vcmRlcnMxNTIzMDY5NTQ0MzU5YW1vdW50PTEwMC4w
 > 結果に対して、秘密鍵を使用して、 `HMAC-SHA1` デジタル署名し、バイナリ結果に対して`Base64` エンコーディング後、下記になります：
 
 ```
-DeP6oftldIrys06uq3B7Lkh3a0U=
+GlHEbHNg2rldDuZ2eCHX8EX8XP0=
 ```
 
 > すなわち、APIサーバーへ検証するための最終的なデジタル署名が生成されます
