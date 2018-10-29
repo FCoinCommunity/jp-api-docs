@@ -117,7 +117,7 @@ POSThttps://api.fcoinjp.com/v2/orders1523069544359amount=100.0&price=100.0&side=
 > Perform Base64 encoding to obtain：
 
 ```
-UE9TVGh0dHBzOi8vYXBpLmZjb2luLmNvbS92Mi9vcmRlcnMxNTIzMDY5NTQ0MzU5YW1vdW50PTEwMC4wJnByaWNlPTEwMC4wJnNpZGU9YnV5JnN5bWJvbD1idGN1c2R0JnR5cGU9bGltaXQ=
+UE9TVGh0dHBzOi8vYXBpLmZjb2luanAuY29tL3YyL29yZGVyczE1MjMwNjk1NDQzNTlhbW91bnQ9MTAwLjAmcHJpY2U9MTAwLjAmc2lkZT1idXkmc3ltYm9sPWJ0Y3VzZHQmdHlwZT1saW1pdA==
 ```
 
 > Copy the key obtained when applying for the API Key (API SECRET). The following signature result is taken `3600d0a74aa3410fb3b1996cca2419c8` as an example，
@@ -125,7 +125,7 @@ UE9TVGh0dHBzOi8vYXBpLmZjb2luLmNvbS92Mi9vcmRlcnMxNTIzMDY5NTQ0MzU5YW1vdW50PTEwMC4w
 > The obtained result is `HMAC-SHA1` signed with the secret key, and the binary result is `Base64` encoded, to obtain：
 
 ```
-DeP6oftldIrys06uq3B7Lkh3a0U=
+GlHEbHNg2rldDuZ2eCHX8EX8XP0=
 ```
 
 > That is, the final signature is generated for verification to the API server
