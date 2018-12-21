@@ -72,7 +72,7 @@ side | 無 | 取引方向
 type | 無  | 注文タイプ
 price | 無 | 価格
 amount | 無 | 発注量
-
+account_type | 無 | 注文タイプ（レバレッジ：margin）
 
 
 
